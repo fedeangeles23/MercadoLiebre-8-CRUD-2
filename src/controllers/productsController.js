@@ -36,6 +36,8 @@ const controller = {
 	store: (req, res) => {
 		/* return res.send(req.body) */	/* Checkear los datos del [{}] */
 
+		/* return res.send(req.file) */
+
 		let {name,price,discount,category,description} = req.body
 
 		let productoNuevo = {
@@ -43,13 +45,15 @@ const controller = {
 			name,
 			price,
 			discount,
+			category,
 			description,
-			image : "gatito-cute.jpg"
+			image : req.file.originalname !== "" ? req.file.filename : "default-image.png",
 		}
 		products.push(productoNuevo)
 		guardar(products)
-		res.redirect(`/products/${productoNuevo.id}`)
-
+		res.redirect(`/products`)
+		/* res.redirect(`/products/${productoNuevo.id}`) */
+		
 	},
 
 	// Update - Form to edit
@@ -74,17 +78,36 @@ const controller = {
 				producto.price = price,
 				producto.discount = discount,
 				producto.category = category,
-				producto.description = description
+				producto.description = description,
+				producto.image = req.file ? req.file.originalname : producto.image
 			}
 		});
 
 		guardar(products)
-		return res.redirect(`/products/${idParams.id}`)
+		return res.redirect(`/products/${idParams}`)
 	},
 
 	// Delete - Delete one product from DB
 	destroy : (req, res) => {
-		return res.send("Producto a eliminar")
+		idParams = +req.params.id
+
+		let producto = products.find(product => product.id === idParams)
+
+		let ruta = fs.existsSync(path.join(__dirname,'..','..','public','images','products',producto.image))
+		/* res.send(producto.image) */
+		/* return res.send(ruta) */
+
+		if (ruta && producto.image !== "default-image.png") {
+			fs.unlinkSync(path.join(__dirname,'..','..','public','images','products',producto.image))
+		}
+
+		let productosModificados = products.filter(producto => {
+			return producto.id !== idParams
+		})
+
+		guardar(productosModificados)
+
+		return res.redirect('/')
 	}
 };
 

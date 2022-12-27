@@ -5,12 +5,15 @@ const router = express.Router();
 // ************ Controller Require ************
 const productsController = require('../controllers/productsController');
 
+// ************ Middlewares Require ************
+const upload = require('../middlewares/creacionProducto');
+
 /*** GET ALL PRODUCTS ***/ 
 router.get('/', productsController.index); 
 
 /*** CREATE ONE PRODUCT ***/ 
 router.get('/create/', productsController.create); /* Renderiza el formulario de carga */
-router.post('/create', productsController.store); /* Captura los datos y los guarda en el servidor */
+router.post('/create',upload.single('imagen'),productsController.store); /* Captura los datos y los guarda en el servidor */
 
 
 /*** GET ONE PRODUCT ***/ 
