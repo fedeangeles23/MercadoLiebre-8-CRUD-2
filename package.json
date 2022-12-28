@@ -1,10 +1,13 @@
 {
-  "name": "baseapphtml",
+  "name": "tp13-crud-episodio2",
   "version": "0.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon ./src/bin/www"
   },
+  "keywords": [],
+  "author": "Fede Angeles",
+  "license": "ISC",
   "dependencies": {
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
