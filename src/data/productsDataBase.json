@@ -144,63 +144,21 @@
         "image": "img-parlante-sony.jpg"
     },
     {
+        "id": 17,
+        "name": "Federico Angeles",
+        "price": "70000",
+        "discount": "100",
+        "category": "in-sale",
+        "description": "hola",
+        "image": "img-1672322366267.png"
+    },
+    {
         "id": 18,
-        "name": "Gatito Cute",
-        "price": "100000000000000",
-        "discount": "0",
-        "description": "Gatito impagable.",
-        "image": "gatito-cute.jpg"
-    },
-    {
-        "id": 19,
-        "name": "Gatito Cute",
-        "price": "1000000000000000000000000",
-        "discount": "0",
-        "description": "Es un gatito.",
-        "image": "gatito-cute.jpg"
-    },
-    {
-        "id": 20,
-        "name": "Gatito Cute",
-        "price": "230000",
-        "discount": "0",
-        "description": "Es un gatito.",
-        "image": "gatito-cute.jpg",
-        "category": "visited"
-    },
-    {
-        "id": 21,
-        "name": "Argentina Campeón 2022",
-        "price": "3",
-        "discount": "0",
-        "description": "18-12-2022",
-        "image": "gatito-cute.jpg"
-    },
-    {
-        "id": 22,
-        "name": "Argentina Campeón 2022",
-        "price": "",
-        "discount": "0",
-        "description": "18-12-22",
-        "image": "argentina-campeon.jpg",
-        "category": ""
-    },
-    {
-        "id": 23,
-        "name": "rthjerth",
-        "price": "",
-        "discount": "0",
-        "description": "rthrthrth",
-        "image": "argentina-campeon.jpg",
-        "category": ""
-    },
-    {
-        "id": 25,
-        "name": "Argentina Campeón 2022",
-        "price": "18122022",
+        "name": "Argentina Campéon ",
+        "price": "2022",
         "discount": "0",
         "category": "visited",
-        "description": "18-12-2022",
-        "image": "argentina-campeon.jpg"
+        "description": "Argentina Campeón 18-12-2022",
+        "image": "img-1672322498705.jpg"
     }
 ]
